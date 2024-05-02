@@ -315,7 +315,7 @@ function clickBomb() {
 
     setTimeout(() => {
         return shuffleCard()
-    }, 2000)
+    }, 1000)
 }
 
 // разворачивает карточки, убирает тряску
