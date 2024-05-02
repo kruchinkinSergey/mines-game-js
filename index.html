@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="mines-casino">
+            <div class="bet">
+                <h2 class="bet__title">Сумма ставки</h2>
+                <input type="text" class="bet__input" placeholder="1.00">
+                <p class="bet__text">Количество бомб</p>
+                <div class="bomb__container">
+                    <button class="bomb__btn bomb__active" value="3">3</button>
+                    <button class="bomb__btn" value="10">10</button>
+                    <button class="bomb__btn" value="15">15</button>
+                    <div class="bomb__calc">
+                        <button class="bomb__calc-btn bomb__calc-btn--minus">
+                            <div class="bomb__calc-stick--minus"></div>
+                        </button>
+                        <div class="bomb__calc-num"></div>
+                        <button class="bomb__calc-btn bomb__calc-btn--plus">
+                            <div class="bomb__calc-stick--plus1"></div>
+                            <div class="bomb__calc-stick--plus2"></div>
+                        </button>
+                    </div>
+                </div>
+                <button class="bet__btn">Сделать ход</button>
+            </div>
+            <div class="game">
+                <div class="game__container">
+                    <div class="overlay">
+                        <div class="overlay__content">
+                            <p class="overlay__ratio">3</p>
+                            <p class="overlay__reward">3</p>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <ul class="cards__wrapper">
+                            <li class="card">
+                                <div class="view front__view">
+                                    <span class="material__icons"></span>
+                                </div>
+                                <div class="view back__view">
+                                    <img src="img/game-bomb.png" alt="card__img">
+                                </div> 
+                            </li>
+                            <li class="card">
+                                <div class="view front__view">
+                                    <span class="material__icons"></span>
+                                </div>
+                                <div class="view back__view">
+                                    <img src="img/game-bomb.png" alt="card__img">
+                                </div> 
+                            </li>
+                            <li class="card">
+                                <div class="view front__view">
+                                    <span class="material__icons"></span>
+                                </div>
+                                <div class="view back__view">
+                                    <img src="img/game-bomb.png" alt="card__img">
+                                </div> 
+                            </li>
+                            <li class="card">
+                                <div class="view front__view">
+                                    <span class="material__icons"></span>
+                                </div>
+                                <div class="view back__view">
+                                    <img src="img/game-bomb.png" alt="card__img">
+                                </div> 
+                            </li>
+                            <li class="card">
+                                <div class="view front__view">
+                                    <span class="material__icons"></span>
+                                </div>
+                                <div class="view back__view">
+                                    <img src="img/game-bomb.png" alt="card__img">
+                                </div> 
+                            </li>
+                            <li class="card">
+                                <div class="view front__view">
+                                    <span class="material__icons"></span>
+                                </div>
+                                <div class="view back__view">
+                                    <img src="img/game-bomb.png" alt="card__img">
+                                </div> 
+                            </li>
+                            <li class="card">
+                                <div class="view front__view">
+                                    <span class="material__icons"></span>
+                                </div>
+                                <div class="view back__view">
+                                    <img src="img/game-bomb.png" alt="card__img">
+                                </div> 
+                            </li>
+                            <li class="card">
+                                <div class="view front__view">
+                                    <span class="material__icons"></span>
+                                </div>
+                                <div class="view back__view">
+                                    <img src="img/game-bomb.png" alt="card__img">
+                                </div> 
+                            </li>
+                            <li class="card">
+                                <div class="view front__view">
+                                    <span class="material__icons"></span>
+                                </div>
+                                <div class="view back__view">
+                                    <img src="img/game-bomb.png" alt="card__img">
+                                </div> 
+                            </li>
+                            <li class="card">
+                                <div class="view front__view">
+                                    <span class="material__icons"></span>
+                                </div>
+                                <div class="view back__view">
+                                    <img src="img/game-bomb.png" alt="card__img">
+                                </div> 
+                            </li>
+                            <li class="card">
+                                <div class="view front__view">
+                                    <span class="material__icons"></span>
+                                </div>
+                                <div class="view back__view">
+                                    <img src="img/game-bomb.png" alt="card__img">
+                                </div> 
+                            </li>
+                            <li class="card">
+                                <div class="view front__view">
+                                    <span class="material__icons"></span>
+                                </div>
+                                <div class="view back__view">
+                                    <img src="img/game-bomb.png" alt="card__img">
+                                </div> 
+                            </li>
+                            <li class="card">
+                                <div class="view front__view">
+                                    <span class="material__icons"></span>
+                                </div>
+                                <div class="view back__view">
+                                    <img src="img/game-bomb.png" alt="card__img">
+                                </div> 
+                            </li>
+                            <li class="card">
+                                <div class="view front__view">
+                                    <span class="material__icons"></span>
+                                </div>
+                                <div class="view back__view">
+                                    <img src="img/game-bomb.png" alt="card__img">
+                                </div> 
+                            </li>
+                            <li class="card">
+                                <div class="view front__view">
+                                    <span class="material__icons"></span>
+                                </div>
+                                <div class="view back__view">
+                                    <img src="img/game-bomb.png" alt="card__img">
+                                </div> 
+                            </li>
+                            <li class="card">
+                                <div class="view front__view">
+                                    <span class="material__icons"></span>
+                                </div>
+                                <div class="view back__view">
+                                    <img src="img/game-bomb.png" alt="card__img">
+                                </div> 
+                            </li>
+                            <li class="card">
+                                <div class="view front__view">
+                                    <span class="material__icons"></span>
+                                </div>
+                                <div class="view back__view">
+                                    <img src="img/game-bomb.png" alt="card__img">
+                                </div> 
+                            </li>
+                            <li class="card">
+                                <div class="view front__view">
+                                    <span class="material__icons"></span>
+                                </div>
+                                <div class="view back__view">
+                                    <img src="img/game-bomb.png" alt="card__img">
+                                </div> 
+                            </li>
+                            <li class="card">
+                                <div class="view front__view">
+                                    <span class="material__icons"></span>
+                                </div>
+                                <div class="view back__view">
+                                    <img src="img/game-bomb.png" alt="card__img">
+                                </div> 
+                            </li>
+                            <li class="card">
+                                <div class="view front__view">
+                                    <span class="material__icons"></span>
+                                </div>
+                                <div class="view back__view">
+                                    <img src="img/game-bomb.png" alt="card__img">
+                                </div> 
+                            </li>
+                            <li class="card">
+                                <div class="view front__view">
+                                    <span class="material__icons"></span>
+                                </div>
+                                <div class="view back__view">
+                                    <img src="img/game-bomb.png" alt="card__img">
+                                </div> 
+                            </li>
+                            <li class="card">
+                                <div class="view front__view">
+                                    <span class="material__icons"></span>
+                                </div>
+                                <div class="view back__view">
+                                    <img src="img/game-bomb.png" alt="card__img">
+                                </div> 
+                            </li>
+                            <li class="card">
+                                <div class="view front__view">
+                                    <span class="material__icons"></span>
+                                </div>
+                                <div class="view back__view">
+                                    <img src="img/game-bomb.png" alt="card__img">
+                                </div> 
+                            </li>
+                            <li class="card">
+                                <div class="view front__view">
+                                    <span class="material__icons"></span>
+                                </div>
+                                <div class="view back__view">
+                                    <img src="img/game-bomb.png" alt="card__img">
+                                </div> 
+                            </li>
+                            <li class="card">
+                                <div class="view front__view">
+                                    <span class="material__icons"></span>
+                                </div>
+                                <div class="view back__view">
+                                    <img src="img/game-bomb.png" alt="card__img">
+                                </div> 
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="count">
+                        <div class="count__coins">
+                            <p class="count__coins-num"></p>
+                            <img src="./img/game-coin.png" class="count__coins-img" />
+                        </div>
+                        <div class="count__bombs">
+                            <p class="count__bombs-num"></p>
+                            <img src="./img/game-bomb.png" class="count__bombs-img" />
+                        </div>
+                    </div>
+                </div>
+                <div class="ratio"></div>
+            </div>
+        </div>    
+        <div class="history-game">
+            <h2 class="history-game__title">История игр</h2>
+            <table class="history-game__table">
+              <tr class="history-game__header">
+                <th class="history-game__header-player">Игрок</th>
+                <th class="history-game__header-bet">Ставка</th>
+                <th class="history-game__header-hit">Попадание</th>
+                <th class="history-game__header-ratio">Коэффициент</th>
+                <th class="history-game__header-win">Выигрыш</th>
+              </tr>
+              <tr class="history-game__content">
+                <td class="history-game__content-player">
+                    <div class="history-game__content-player-img-container">
+                        <img src="./img/user_avatar.png" alt="user avatar" class="history-game__content-player-img">
+                    </div>
+                    <p class="history-game__content-player-name">User User</p>
+                </td>
+                <td class="history-game__content-bet">3</td>
+                <td class="history-game__content-hit">3</td>
+                <td class="history-game__content-ratio">x8</td>
+                <td class="history-game__content-win">22</td>
+              </tr>
+              <tr class="history-game__content">
+                <td class="history-game__content-player">
+                    <div class="history-game__content-player-img-container">
+                        <img src="./img/user_avatar.png" alt="user avatar" class="history-game__content-player-img">
+                    </div>
+                    <p class="history-game__content-player-name">User User</p>
+                </td>
+                <td class="history-game__content-bet">3</td>
+                <td class="history-game__content-hit">3</td>
+                <td class="history-game__content-ratio">x8</td>
+                <td class="history-game__content-win">22</td>
+              </tr>
+              <tr class="history-game__content">
+                <td class="history-game__content-player">
+                    <div class="history-game__content-player-img-container">
+                        <img src="./img/user_avatar.png" alt="user avatar" class="history-game__content-player-img">
+                    </div>
+                    <p class="history-game__content-player-name">User User</p>
+                </td>
+                <td class="history-game__content-bet">3</td>
+                <td class="history-game__content-hit">3</td>
+                <td class="history-game__content-ratio">x8</td>
+                <td class="history-game__content-win">22</td>
+              </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
