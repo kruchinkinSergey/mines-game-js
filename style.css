@@ -169,8 +169,9 @@ body{
 }
 
 .overlay{
+    display: none;
     height: 100%;
-    width: 0;
+    width: 100%;
     position: absolute;
     z-index: 1;
     top: 0;
@@ -180,7 +181,7 @@ body{
 }
 
 .overlay__content {
-    background: linear-gradient(270deg, rgba(3,3,3,1) 16%, rgba(99,46,16,1) 58%, rgba(51,34,23,1) 70%, rgba(24,24,24,1) 79%, rgba(152,61,9,1) 90%, rgba(213,77,0,1) 100%);
+    background: linear-gradient(90deg, rgba(123,53,14,1) 0%, rgba(99,47,18,1) 10%, rgba(48,32,23,1) 31%, rgba(30,26,24,1) 51%, rgba(19,18,18,1) 67%, rgba(14,14,13,1) 84%, rgba(10,9,8,1) 100%);
     position: relative;
     top: 50%;
     left: 50%;
@@ -194,6 +195,21 @@ body{
     align-items: center;
     padding: 76px 0;
   }
+
+.overlay__btn-container{
+    position: absolute;
+    top: 13px;
+    right: 16px;
+    padding: 5px;
+}
+
+.overlay__btn{
+    background-color: transparent;
+    border: none;
+    color: #646464;
+    padding: 0;
+    cursor: pointer;
+}
 
 .overlay__ratio{
     font-size: 66px;
@@ -335,10 +351,12 @@ body{
 }
 
 .ratio__item{
+    min-width: 105px;
     padding: 20px;
     border-radius: 10px;
     color: #686868;
     border: 1px solid #686868;
+    text-align: center;
 }
 
 .ratio__item.ratio__active{
