@@ -67,7 +67,7 @@ function createRationsandCounts(cntCoins) {
     coinCnt.textContent = cntCoins;
     bombCnt.textContent = 25 - cntCoins;
     allBombs =  bombCnt.textContent
-    console.log('allBombs: ', allBombs)
+    // console.log('allBombs: ', allBombs)
 
     ratioEl.innerHTML = '';
     for (let i = 0; i < cntCoins; i++) {
@@ -110,14 +110,7 @@ function getRatioFromArr(cntBomb, count) {
 
 // валидация input
 betInput.addEventListener('input', function() {
-    this.value = this.value.replace(/[^0-9.]/g, ''); 
-    
-    if (this.value.includes('.')) {
-        const parts = this.value.split('.');
-        if (parts[1].length > 2) {
-            this.value = `${parts[0]}.${parts[1].slice(0, 2)}`;
-        }
-    }
+    this.value = this.value.replace(/[^0-9]/g, ''); 
 });
 
 
@@ -131,19 +124,32 @@ betBtn.addEventListener('click', () => {
             betInputWarning.style.display = 'none'
         }, 5000)
     }
+
+    // проверяем, что ставка не меньше 15
+    if (betInput.value < 15) {
+        betInputWarning.textContent = 'Минимальная ставка 15'
+        betInputWarning.style.display = 'block'
+        betInput.value = 15
+        setTimeout(() => {
+            betInputWarning.style.display = 'none'
+        }, 5000)
+    }
+
     // проверяем, что всё вписано и можно начать игру
     if (betInput.value !== '' && isGetReward === false) {
         gameContainerEl.classList.add('game__active')
         bombContainerEl.classList.add('untouchable')
         betInput.classList.add('untouchable')
         betBtn.innerHTML = `Выберите ячейку`
-        console.log('click')
+        // console.log('click')
     } 
+
     // когда пользователь забирает награду
     if (isGetReward === true) {
         // выигрыш (значение, которое показывает кнопка при клике на монетку)
         reward = betBtn.innerHTML.replace(/[^0-9.]/g, "");
         shuffleCard()
+        smoothScrollBy(-1000, 100)
         const ratioItemArr = document.querySelectorAll('.ratio__item');
         let cntRatioItemForOverlay = -1
         for (let item of ratioItemArr) {
@@ -176,12 +182,12 @@ betBtn.addEventListener('click', () => {
 
 // переворачиваем карточку
 function flipCard(e){
+    // console.log(e.target)
    let clickedCard = e.target;
-   pressedCard++
-   cntRatioItemActive++
 
-   if(clickedCard !== lastCard && !disableDeck){
-        console.log(`clickedCard: ${clickedCard.children[1].children[0].src}, lastCard: ${lastCard}, disableDeck: ${disableDeck}`)
+   if(clickedCard !== lastCard && disableDeck === false) {
+        pressedCard++
+        cntRatioItemActive++
         clickedCard.classList.add("flip");
         lastCard = clickedCard
         let imgTag = clickedCard.querySelector("img");
@@ -196,7 +202,7 @@ function flipCard(e){
         }
 
     } else {
-        console.log(`clickedCard: ${clickedCard}, lastCard: ${lastCard}, disableDeck: ${disableDeck}`)
+        console.log(`${clickedCard !== lastCard},${disableDeck === false}`)
     }
     
 }
@@ -205,7 +211,7 @@ function flipCard(e){
 function generateNumber(cntBombs) {
     let randomNum = Math.random();
     const probability = {
-        2: 1.5,
+        2: 0.5,
         3: 0.4,
         4: 0.4,
         5: 0.4,
@@ -237,10 +243,9 @@ function generateNumber(cntBombs) {
     }
 
 }
-document.addEventListener('click', function(event) {
-    console.log(window.innerWidth)
-    console.log('X координата: ' + event.clientX);
-});
+// document.addEventListener('click', function(event) {
+//     console.log(event.target)
+// });
 
 // двигает карточкии коэффициентов в зависимости от текущего коэффициента
 function moveRatioItem(indexRatioItem) {
@@ -342,6 +347,7 @@ function clickBomb() {
 
 // разворачивает карточки, убирает тряску
 function shuffleCard(){
+    lastCard = ''
     pressedCard = 0
     disableDeck = false;
     cards.forEach((card) => {
