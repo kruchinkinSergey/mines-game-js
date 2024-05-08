@@ -67,6 +67,7 @@ function createRationsandCounts(cntCoins) {
     coinCnt.textContent = cntCoins;
     bombCnt.textContent = 25 - cntCoins;
     allBombs =  bombCnt.textContent
+    console.log('allBombs: ', allBombs)
 
     ratioEl.innerHTML = '';
     for (let i = 0; i < cntCoins; i++) {
@@ -121,12 +122,22 @@ betInput.addEventListener('input', function() {
 
 
 betBtn.addEventListener('click', () => {
+    const betInputWarning = document.querySelector('.bet__input-warning')
+    // проверяем, что инпут не пустой
+    if (betInput.value === '') {
+        betInputWarning.textContent = 'Сделайте ставку'
+        betInputWarning.style.display = 'block'
+        setTimeout(() => {
+            betInputWarning.style.display = 'none'
+        }, 5000)
+    }
     // проверяем, что всё вписано и можно начать игру
     if (betInput.value !== '' && isGetReward === false) {
         gameContainerEl.classList.add('game__active')
         bombContainerEl.classList.add('untouchable')
         betInput.classList.add('untouchable')
         betBtn.innerHTML = `Выберите ячейку`
+        console.log('click')
     } 
     // когда пользователь забирает награду
     if (isGetReward === true) {
@@ -170,6 +181,7 @@ function flipCard(e){
    cntRatioItemActive++
 
    if(clickedCard !== lastCard && !disableDeck){
+        console.log(`clickedCard: ${clickedCard.children[1].children[0].src}, lastCard: ${lastCard}, disableDeck: ${disableDeck}`)
         clickedCard.classList.add("flip");
         lastCard = clickedCard
         let imgTag = clickedCard.querySelector("img");
@@ -183,6 +195,8 @@ function flipCard(e){
             disableDeck = true
         }
 
+    } else {
+        console.log(`clickedCard: ${clickedCard}, lastCard: ${lastCard}, disableDeck: ${disableDeck}`)
     }
     
 }
@@ -223,14 +237,18 @@ function generateNumber(cntBombs) {
     }
 
 }
+document.addEventListener('click', function(event) {
+    console.log(window.innerWidth)
+    console.log('X координата: ' + event.clientX);
+});
 
 // двигает карточкии коэффициентов в зависимости от текущего коэффициента
 function moveRatioItem(indexRatioItem) {
     const ratioItemArr = document.querySelectorAll('.ratio__item');
     const activeElementRect = ratioItemArr[indexRatioItem].getBoundingClientRect();
 
-    if (activeElementRect.right > 1288) {
-        smoothScrollBy(100, 500)
+    if (activeElementRect.right > (window.innerWidth / 1.4)) {
+        smoothScrollBy(130, 500)
     } 
 
 }

@@ -17,7 +17,8 @@ body{
 }
 
 .container{
-    max-width: 1436px;
+    width: 1165px;
+    min-width: 1000px;
     margin: 0 auto;
 }
 
@@ -25,7 +26,7 @@ body{
     display: flex;
     /* align-items: center; */
     background-color: #171717;
-    gap: 64px;
+    gap: 4%;
 }
 
 .bet{
@@ -33,8 +34,9 @@ body{
     flex-direction: column;
     align-items: flex-start;
     background-color: #1E1E1E;
-    padding: 38px 66px 38px 36px;
-    width: 515px;
+    padding: 38px 46px 38px 36px;
+    width: 36%;
+    position: relative;
 }
 
 .bet__title{
@@ -61,6 +63,17 @@ body{
     color: gray;
 }
 
+.bet__input-warning{
+    display: none;
+    position: absolute;
+    border: 1px solid #FF6E1C;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 11px;
+    left: 36px;
+    top: 145px;
+}
+
 .bet__text{
     font-size: 22px;
     margin-bottom: 21px;
@@ -79,25 +92,32 @@ body{
     pointer-events: none;
 }
 
+.bomb__btn-container{
+    width: 48%;
+    display: flex;
+    justify-content: space-between;
+}
+
 .bomb__btn{
     border: 1px solid #757575;
     background-color: transparent;
     color: #fff;
-    padding: 10px;
+    padding: 10px 10px;
     border-radius: 10px;
-    font-size: 24px;
-    line-height: 29px; 
+    font-size: 20px;
+    line-height: 20px; 
     cursor: pointer;
 }
 
 .bomb__calc{
+    width: 46%;
     display: flex;
     align-items: center;
 }
 
 .bomb__calc-btn{
     border: 1px solid #9D3B05;
-    padding: 22px 13px;
+    padding: 18px 10px;
     background-color: transparent;
     position: relative;
     border-radius: 10px;
@@ -113,25 +133,27 @@ body{
 
 .bomb__calc-num{
     background-color: #171717;
-    font-size: 23px;
-    padding: 11px 25px;
+    font-size: 21px;
+    padding: 8px 0;
+    width: 34%;
+    text-align: center;
 }
 
 .bomb__calc-stick--plus1{
-    width: 26px;
+    width: 22px;
     height: 5px;
     border-radius: 10px;
     background-color: #FF6E1C;
 }
 
 .bomb__calc-stick--plus2{
-    width: 26px;
+    width: 22px;
     height: 5px;
     border-radius: 10px;
     background-color: #FF6E1C;
     transform: rotate(90deg);
     position: absolute;
-    top: 22px
+    top: 18px;
 }
 
 .bet__btn{
@@ -146,15 +168,15 @@ body{
 }
 
 .game{
-    width: 857px;
-    padding: 38px 50px 38px 60px;
+    width: 60%;
+    padding: 38px 40px 38px 50px;
     background-color: #1E1E1E;
 }
 
 .game__container{
     position: relative;
     width: 100%;
-    padding: 47px 0 64px 64px;
+    padding: 47px 0 54px 54px;
     background: linear-gradient(270deg, rgba(213,77,0,1) 0%, rgba(152,61,9,1) 26%, rgba(99,46,16,1) 54%, rgba(56,35,23,1) 70%, rgba(27,27,27,1) 83%, rgba(27,27,27,1) 100%);
     display: flex;
     align-items: center;
@@ -186,7 +208,7 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 23vw;
+    width: 26vw;
     text-align: center;
     display: flex;
     gap: 20px;
@@ -194,6 +216,7 @@ body{
     justify-content: center;
     align-items: center;
     padding: 76px 0;
+    border-radius: 10px;
   }
 
 .overlay__btn-container{
@@ -222,8 +245,8 @@ body{
 }
 
 .cards{
-    height: 418px;
-    width: 418px;
+    height: 370px;
+    width: 370px;
     background: transparent;
     border-radius: 10px;
 }
@@ -309,18 +332,18 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    gap: 60px;
+    gap: 50px;
 }
 
 .count__coins, .count__bombs{
-    background-color: rgba(23,23,23, 0.57);
+    background-color: rgba(23, 23, 23, 0.57);
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 10px 15px;
-    font-size: 26px;
+    padding: 10px 10px;
+    font-size: 24px;
     border-radius: 16px 0 0 16px;
-    width: 167px;
+    width: 140px
 }
 
 .ratio{
@@ -330,7 +353,7 @@ body{
     border: 1px solid #FF6E1C;
     border-radius: 10px 10px 0 0;
     display: flex;
-    overflow: auto;
+    overflow-x: auto;
     gap: 25px;
 }
 
@@ -422,259 +445,39 @@ body{
     align-items: center;
 }
 /* я не знаю какая будет ширина, тк будет не страница, а окно, поэтому не мог использовать vw и поэтому ширину, возможно, придется изменить */
-@media (max-width: 1550px) {
-    .container{
-        max-width: 1336px;
-        margin: 0 auto;
-    }
-    .mines-casino{
-        display: flex;
-        /* align-items: center; */
-        background-color: #171717;
-        gap: 44px;
-    }
-    .bet{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        background-color: #1E1E1E;
-        padding: 38px 66px 38px 36px;
-        width: 465px;
-    }
-    .game{
-        width: 807px;
-        padding: 38px 50px 38px 60px;
-        background-color: #1E1E1E;
-    }
-    
-}
-@media (max-width: 1340px) {
-    .container{
-        max-width: 1236px;
-        margin: 0 auto;
-    }
-    .mines-casino{
-        display: flex;
-        /* align-items: center; */
-        background-color: #171717;
-        gap: 24px;
-    }
-    .bet{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        background-color: #1E1E1E;
-        padding: 38px 66px 38px 36px;
-        width: 405px;
-    }
-    .game{
-        width: 767px;
-        padding: 38px 50px 38px 60px;
-        background-color: #1E1E1E;
-    }
-    .bet__title{
-        font-size: 22px;
-    }
-    .bet__text{
-        font-size: 20px;
-    }
-    .bomb__btn{
-        padding: 8px;
-        font-size: 20px;
-    }
-    .bomb__calc-btn{
-        padding: 22px 8px;
-    }
-    .bomb__calc-stick--minus{
-        width: 20px;
-        height: 4px;
-    }
-    .bomb__calc-stick--plus1{
-        width: 20px;
-        height: 4px;
-    }
-    .bomb__calc-stick--plus2{
-        width: 20px;
-        height: 4px;
-    }
-    .bet__btn{
-        font-size: 18px;
-    }
-    .overlay__content {
-        width: 23vw;
-        gap: 15px;
-        padding: 76px 0;
-      }
-    
-    .overlay__ratio{
-        font-size: 60px;
-        color: #FF6E1C;
-    }
-    .overlay__reward{
-        font-size: 20px;
-        color: #fff;
-    }
-    .cards{
-        height: 380px;
-        width: 380px;
-    }
-    .count__coins{
-        padding: 8px 11px;
-        font-size: 22px;
-    }
-    .count__coins-img{
-        width: 50px;
-    }
-    .count__bombs-img{
-        width: 65px;
-    }
-    .ratio{
-        padding: 20px 27px;
-    }
-    .ratio::-webkit-scrollbar {
-        width: 8px; 
-        height: 8px; 
-    }
-    .history-game{
-        margin-top: 30px;
-    }
-}
 
-@media (max-width: 1210px) {
+@media (max-width: 1120px) {
     .container{
-        max-width: 936px;
-        margin: 0 auto;
-    }
-    .mines-casino{
-        gap: 14px;
-    }
-    .bet{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        background-color: #1E1E1E;
-        padding: 38px 46px 28px 26px;
-        width: 320px;
-    }
-    .bet__input{
-        margin-bottom: 35px;
-    }
-    .bet__text{
-        font-size: 18px;
-    }
-    .game{
-        width: 641px;
-        padding: 30px 25px 30px 35px;
-        background-color: #1E1E1E;
-    }
-    .game__container {
-        padding: 27px 0 34px 24px;
-    }
-    .overlay__content {
-        width: 23vw;
-        gap: 10px;
-        padding: 56px 0;
-      }
-    
-    .overlay__ratio{
-        font-size: 50px;
-        color: #FF6E1C;
-    }
-    .overlay__reward{
-        font-size: 18px;
-        color: #fff;
-    }
-    .bomb__btn{
-        padding: 5px;
-        font-size: 14px;
-    }
-    .bomb__calc-btn{
-        padding: 19px 8px;
-    }
-    .bomb__calc-stick--minus{
-        width: 15px;
-        height: 3px;
-    }
-    .bomb__calc-num{
-        font-size: 16px;
-        padding: 11px 15px;
-    }
-    .bomb__calc-stick--plus1{
-        width: 15px;
-        height: 3px;
-    }
-    .bomb__calc-stick--plus2{
-        width: 15px;
-        height: 3px;
-        top: 19px;
-    }
-    .game__container{
-        padding: 37px 0 44px 44px
-    }
-    .cards{
-        width: 350px;
-        height: 350px;
-    }
-    .count{
-        gap: 40px;
-        width: 150px;
-    }
-    .count__coins,
-    .count__bombs{
-        padding: 7px 9px;
-        font-size: 20px;
-    }
-    .count__coins-img{
-        width: 45px;
-    }
-    .count__bombs-img{
-        width: 60px;
-    }
-    .history-game__title{
-        font-size: 30px;
-        padding: 32px 0 42px;
-    }
-    .history-game__table th {
-        font-size: 16px;
-        padding-bottom: 17px;
-    }
-    .history-game__table td {
-        font-size: 14px;
-        padding-top: 25px;
-    }
-    .history-game__content-player-img{
-        width: 40px;
-    }
-}
-@media (max-width: 950px) {
-    .container{
-        max-width: 830px;
+        min-width: 1000px;
     }
     .bet{
         padding: 38px 26px 28px 26px;
-        width: 280px;
     }
-
     .bet__title{
         font-size: 20px;
     }
     .bet__input{
         margin-bottom: 30px;
     }
+    .bet__input-warning{
+        padding: 5px;
+        font-size: 11px;
+        left: 27px;
+        top: 137px;
+    }
     .bet__text{
         font-size: 17px;
     }
     .game{
-        width: 571px;
-        padding: 25px 17px 25px 20px;
+        padding: 38px 40px 38px 50px;
     }
     .game__container{
-        padding: 17px 0 15px 24px;
+        padding: 47px 0 54px 54px;
     }
     .overlay__content {
-        width: 23vw;
-        gap: 10px;
-        padding: 46px 0;
+        width: 29vw;
+        gap: 19px;
+        padding: 70px 0;
     }
     .overlay__ratio{
         font-size: 40px;
@@ -684,29 +487,40 @@ body{
         font-size: 17px;
         color: #fff;
     }
+    .bomb__container{
+        margin-bottom: 44px;
+    }
+    .bomb__btn-container{
+        width: 48%;
+    }
     .bomb__btn{
-        padding: 5px;
-        font-size: 14px;
+        padding: 10px 10px;
+        font-size: 20px;
+        line-height: 20px; 
+    }
+    .bomb__calc{
+        width: 46%;
     }
     .bomb__calc-btn{
-        padding: 19px 8px;
+        padding: 18px 10px;
     }
     .bomb__calc-stick--minus{
-        width: 15px;
-        height: 3px;
+        width: 26px;
+        height: 5px;
     }
     .bomb__calc-num{
-        font-size: 16px;
-        padding: 11px 15px;
+        font-size: 21px;
+        padding: 8px 0;
+        width: 34%;
     }
     .bomb__calc-stick--plus1{
-        width: 15px;
-        height: 3px;
-    }
+        width: 22px;
+        height: 5px;
+    } 
     .bomb__calc-stick--plus2{
-        width: 15px;
-        height: 3px;
-        top: 19px;
+        width: 22px;
+        height: 5px;
+        top: 18px;
     }
     .cards{
         width: 320px;
@@ -718,11 +532,11 @@ body{
     .count__coins,
     .count__bombs{
         padding: 7px 9px;
-        font-size: 18px;
-        width: 150px;
+        font-size: 20px;
+        width: 110px;
     }
     .count__coins-img{
-        width: 40px;
+        width: 47px;
     }
     .count__bombs-img{
         width: 50px;
@@ -751,103 +565,376 @@ body{
     }
 }
 
-@media (max-width: 768px) {
-    .mines-casino{
-        gap: 4px;
-    }
+@media (max-width: 1000px) {
     .container{
-        max-width: 750px;
+        min-width: 920px;
     }
     .bet{
-        padding: 28px 20px 20px 20px;
-        width: 215px;
+        padding: 38px 26px 28px 26px;
     }
     .bet__title{
-        font-size: 18px;
+        font-size: 20px;
     }
     .bet__input{
-        margin-bottom: 20px;
-        padding: 7px 12px;
+        margin-bottom: 30px;
     }
     .bet__text{
-        font-size: 15px;
+        font-size: 17px;
     }
     .bet__btn{
-        font-size: 14px;
+        font-size: 17px;
     }
     .game{
-        width: 531px;
-        padding: 20px 15px 20px 17px;
+        padding: 38px 35px 38px 40px;
     }
     .game__container{
-        padding: 15px 0 12px 20px;
+        padding: 47px 0 44px 44px;
     }
     .overlay__content {
-        width: 250px;
-        gap: 10px;
-        padding: 46px 0;
+        width: 29vw;
+        gap: 19px;
+        padding: 70px 0;
+    }
+    .overlay__ratio{
+        font-size: 40px;
+        color: #FF6E1C;
+    }
+    .overlay__reward{
+        font-size: 17px;
+        color: #fff;
+    }
+    .bomb__container{
+        margin-bottom: 44px;
+    }
+    .bomb__btn-container{
+        width: 48%;
     }
     .bomb__btn{
-        padding: 5px;
-        font-size: 14px;
-        line-height: 18px;
+        padding: 8px 8px;
+        font-size: 17px;
+        line-height: 20px; 
     }
-    .bomb__btn:nth-child(2){
-        display: none;
+    .bomb__calc{
+        width: 46%;
     }
     .bomb__calc-btn{
-        padding: 13px 8px;
+        padding: 15px 8px;
     }
     .bomb__calc-stick--minus{
-        width: 15px;
-        height: 3px;
+        width: 21px;
+        height: 5px;
     }
     .bomb__calc-num{
-        font-size: 15px;
-        padding: 7px 11px;
-        border-radius: 10px;
+        font-size: 18px;
+        padding: 8px 0;
+        width: 34%;
     }
     .bomb__calc-stick--plus1{
-        width: 15px;
-        height: 3px;
-    }
+        width: 21px;
+        height: 5px;
+    } 
     .bomb__calc-stick--plus2{
-        width: 15px;
-        height: 3px;
-        top: 13px;
+        width: 21px;
+        height: 5px;
+        top: 15px;
     }
     .cards{
-        width: 302px;
-        height: 302px;
+        width: 300px;
+        height: 300px;
+    }
+    .cards__wrapper .card{
+        width: 52px;
+        height: 52px;
+    }
+    .card .back__view img{
+        max-width: 40px;
+    }
+    .count{
+        gap: 30px;
+    }
+    .count__coins,
+    .count__bombs{
+        padding: 7px 9px;
+        font-size: 20px;
+        width: 110px;
+    }
+    .count__coins-img{
+        width: 47px;
+    }
+    .count__bombs-img{
+        width: 50px;
+    }
+    .ratio{
+        padding: 13px 17px;
+    }
+    .ratio::-webkit-scrollbar {
+        width: 9px; 
+        height: 9px; 
+    }
+    .ratio__item{
+        padding: 18px
+    }
+    .history-game__title{
+        font-size: 25px;
+        padding: 28px 0 37px;
+    }
+    .history-game__table th {
+        font-size: 14px;
+        padding-bottom: 15px;
+    }
+    .history-game__table td {
+        font-size: 12px;
+        padding-top: 20px;
+    }
+    .history-game__content-player-img{
+        width: 35px;
+    }
+}
+
+@media (max-width: 920px) {
+    .container{
+        min-width: 840px;
+    }
+    .bet{
+        padding: 38px 26px 28px 26px;
+    }
+    .bet__title{
+        font-size: 20px;
+        padding-bottom: 10px;
+    }
+    .bet__input{
+        margin-bottom: 30px;
+        padding: 10px 16px;
+    }
+    .bet__input-warning{
+        padding: 5px;
+        font-size: 9px;
+        left: 27px;
+        top: 111px;
+    }
+    .bet__text{
+        font-size: 17px;
+    }
+    .bet__btn{
+        font-size: 17px;
+    }
+    .game{
+        padding: 30px 30px 30px 30px;
+    }
+    .game__container{
+        padding: 40px 0 34px 34px;
+    }
+    .overlay__content {
+        width: 29vw;
+        gap: 19px;
+        padding: 70px 0;
+    }
+    .overlay__ratio{
+        font-size: 40px;
+        color: #FF6E1C;
+    }
+    .overlay__reward{
+        font-size: 17px;
+        color: #fff;
+    }
+    .bomb__container{
+        margin-bottom: 44px;
+    }
+    .bomb__btn-container{
+        width: 48%;
+    }
+    .bomb__btn{
+        padding: 8px 8px;
+        font-size: 17px;
+        line-height: 20px; 
+    }
+    .bomb__calc{
+        width: 46%;
+    }
+    .bomb__calc-btn{
+        padding: 15px 8px;
+    }
+    .bomb__calc-stick--minus{
+        width: 21px;
+        height: 5px;
+    }
+    .bomb__calc-num{
+        font-size: 18px;
+        padding: 8px 0;
+        width: 34%;
+    }
+    .bomb__calc-stick--plus1{
+        width: 21px;
+        height: 5px;
+    } 
+    .bomb__calc-stick--plus2{
+        width: 21px;
+        height: 5px;
+        top: 15px;
+    }
+    .cards{
+        width: 280px;
+        height: 280px;
+    }
+    .cards__wrapper .card{
+        width: 48px;
+        height: 48px;
     }
     .card .back__view img{
         max-width: 35px;
     }
     .count{
         gap: 30px;
-        width: 112px;
     }
     .count__coins,
     .count__bombs{
         padding: 7px 9px;
-        font-size: 15px;
-        width: 112px;
+        font-size: 18px;
+        width: 110px;
     }
     .count__coins-img{
-        width: 36px;
+        width: 43px;
     }
     .count__bombs-img{
         width: 45px;
     }
     .ratio{
-        padding: 12px 15px;
+        padding: 13px 17px;
     }
     .ratio::-webkit-scrollbar {
-        width: 5px; 
-        height: 5px; 
+        width: 9px; 
+        height: 9px; 
     }
     .ratio__item{
-        padding: 12px;
+        padding: 15px
+    }
+    .history-game__title{
+        font-size: 25px;
+        padding: 28px 0 37px;
+    }
+    .history-game__table th {
+        font-size: 14px;
+        padding-bottom: 15px;
+    }
+    .history-game__table td {
+        font-size: 12px;
+        padding-top: 20px;
+    }
+    .history-game__content-player-img{
+        width: 35px;
+    }
+}
+
+@media (max-width: 840px) {
+    .container{
+        min-width: 750px;
+    }
+    .bet{
+        padding: 38px 26px 28px 26px;
+    }
+    .bet__title{
+        font-size: 20px;
+    }
+    .bet__input{
+        margin-bottom: 30px;
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+    .bet__text{
+        font-size: 17px;
+    }
+    .bet__btn{
+        font-size: 15px;
+    }
+    .game{
+        padding: 20px 20px 20px 20px;
+    }
+    .game__container{
+        padding: 30px 0 30px 30px;
+    }
+    .overlay__content {
+        width: 29vw;
+        gap: 19px;
+        padding: 70px 0;
+    }
+    .overlay__ratio{
+        font-size: 40px;
+        color: #FF6E1C;
+    }
+    .overlay__reward{
+        font-size: 17px;
+        color: #fff;
+    }
+    .bomb__container{
+        margin-bottom: 35px;
+    }
+    .bomb__btn-container{
+        width: 48%;
+    }
+    .bomb__btn{
+        padding: 8px 7px;
+        font-size: 14px;
+        line-height: 12px; 
+    }
+    .bomb__calc{
+        width: 46%;
+    }
+    .bomb__calc-btn{
+        padding: 12px 6px;
+    }
+    .bomb__calc-stick--minus{
+        width: 17px;
+        height: 3px;
+    }
+    .bomb__calc-num{
+        font-size: 15px;
+        padding: 5px 0;
+        width: 34%;
+    }
+    .bomb__calc-stick--plus1{
+        width: 17px;
+        height: 3px;
+    } 
+    .bomb__calc-stick--plus2{
+        width: 17px;
+        height: 3px;
+        top: 12px;
+    }
+    .cards{
+        width: 250px;
+        height: 250px;
+    }
+    .cards__wrapper .card{
+        width: 42px;
+        height: 42px;
+    }
+    .card .back__view img{
+        max-width: 30px;
+    }
+    .count{
+        gap: 30px;
+    }
+    .count__coins,
+    .count__bombs{
+        padding: 7px 9px;
+        font-size: 15px;
+        width: 100px;
+    }
+    .count__coins-img{
+        width: 40px;
+    }
+    .count__bombs-img{
+        width: 42px;
+    }
+    .ratio{
+        padding: 13px 17px;
+    }
+    .ratio::-webkit-scrollbar {
+        width: 7px; 
+        height: 7px; 
+    }
+    .ratio__item{
+        padding: 12px
     }
     .history-game__title{
         font-size: 25px;
@@ -872,7 +959,7 @@ body{
         gap: 20px;
     }
     .container{
-        max-width: 99vw;
+        min-width: 100vw;
         margin: 0 auto;
     }
     .bet{
@@ -886,9 +973,15 @@ body{
         width: 100%;
     }
     .bet__input{
-        margin-bottom: 20px;
+        margin-bottom: 30px;
         padding: 7px 12px;
         font-size: 12px;
+    }
+    .bet__input-warning{
+        padding: 3px;
+        font-size: 9px;
+        left: 68px;
+        top: 93px;
     }
     .bet__text{
         font-size: 15px;
@@ -902,9 +995,6 @@ body{
         padding: 11px;
         font-size: 14px;
         line-height: 11px;
-    }
-    .bomb__btn:nth-child(2){
-        display: block;
     }
     .bomb__calc-btn{
         padding: 15px 9px;
@@ -945,8 +1035,12 @@ body{
         width: 302px;
         height: 302px;
     }
+    .cards__wrapper .card{
+        width: 52px;
+        height: 52px;
+    }
     .card .back__view img{
-        max-width: 30px;
+        max-width: 35px;
     }
     .count{
         gap: 22px;
@@ -1007,14 +1101,46 @@ body{
     }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 400px) {
     .bet{
         padding: 21px 47px 49px;
         width: 100%;
         text-align: center;
     }
+    .bet__input-warning{
+        padding: 3px;
+        font-size: 9px;
+        left: 48px;
+        top: 93px;
+    }
     .bomb__container{
         margin-bottom: 34px;
+    }
+    .bomb__btn{
+        padding: 8px;
+        font-size: 13px;
+        line-height: 11px;
+    }
+    .bomb__calc-btn{
+        padding: 13px 9px;
+    }
+    .bomb__calc-stick--minus{
+        width: 13px;
+        height: 3px;
+    }
+    .bomb__calc-num{
+        font-size: 14px;
+        padding: 7px 11px;
+        border-radius: 10px;
+    }
+    .bomb__calc-stick--plus1{
+        width: 13px;
+        height: 3px;
+    }
+    .bomb__calc-stick--plus2{
+        width: 13px;
+        height: 3px;
+        top: 13px;
     }
     .game__container{
         padding: 0 33px 23px;
@@ -1035,9 +1161,15 @@ body{
     }
 }
 
-@media (max-width: 345px) {
+@media (max-width: 370px) {
     .bet{
         padding: 21px 37px 49px;
+    }
+    .bet__input-warning{
+        padding: 3px;
+        font-size: 9px;
+        left: 38px;
+        top: 93px;
     }
     .game__container{
         padding: 0 33px 23px;
@@ -1056,6 +1188,12 @@ body{
     .bet{
         padding: 21px 37px 49px;
     }
+    .bet__input-warning{
+        padding: 3px;
+        font-size: 9px;
+        left: 23px;
+        top: 93px;
+    }
     .game__container{
         padding: 0 33px 23px;
     }
@@ -1066,6 +1204,9 @@ body{
     .cards__wrapper .card{
         width: 40px;
         height: 40px;
+    }
+    .card .back__view img{
+        max-width: 30px;
     }
 }
 @media (max-width: 300px) {
@@ -1082,5 +1223,9 @@ body{
     .cards__wrapper .card{
         width: 36px;
         height: 36px;
+    }
+
+    .card .back__view img{
+        max-width: 27px;
     }
 }
