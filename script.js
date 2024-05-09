@@ -67,7 +67,6 @@ function createRationsandCounts(cntCoins) {
     coinCnt.textContent = cntCoins;
     bombCnt.textContent = 25 - cntCoins;
     allBombs =  bombCnt.textContent
-    // console.log('allBombs: ', allBombs)
 
     ratioEl.innerHTML = '';
     for (let i = 0; i < cntCoins; i++) {
@@ -116,6 +115,7 @@ betInput.addEventListener('input', function() {
 
 betBtn.addEventListener('click', () => {
     const betInputWarning = document.querySelector('.bet__input-warning')
+
     // проверяем, что инпут не пустой
     if (betInput.value === '') {
         betInputWarning.textContent = 'Сделайте ставку'
@@ -141,13 +141,13 @@ betBtn.addEventListener('click', () => {
         bombContainerEl.classList.add('untouchable')
         betInput.classList.add('untouchable')
         betBtn.innerHTML = `Выберите ячейку`
-        // console.log('click')
+        console.log('click')
     } 
 
     // когда пользователь забирает награду
     if (isGetReward === true) {
         // выигрыш (значение, которое показывает кнопка при клике на монетку)
-        reward = betBtn.innerHTML.replace(/[^0-9.]/g, "");
+        reward = betBtn.innerHTML.replace(/[^0-9]/g, "");
         shuffleCard()
         smoothScrollBy(-1000, 100)
         const ratioItemArr = document.querySelectorAll('.ratio__item');
@@ -182,10 +182,10 @@ betBtn.addEventListener('click', () => {
 
 // переворачиваем карточку
 function flipCard(e){
-    // console.log(e.target)
-   let clickedCard = e.target;
+    console.log(e.target)
+    let clickedCard = e.target;
 
-   if(clickedCard !== lastCard && disableDeck === false) {
+    if(clickedCard !== lastCard && disableDeck === false) {
         pressedCard++
         cntRatioItemActive++
         clickedCard.classList.add("flip");
@@ -211,14 +211,14 @@ function flipCard(e){
 function generateNumber(cntBombs) {
     let randomNum = Math.random();
     const probability = {
-        2: 0.5,
-        3: 0.4,
-        4: 0.4,
-        5: 0.4,
-        6: 0.4,
-        7: 0.4,
-        8: 0.4,
-        9: 0.4,
+        2: 0.55,
+        3: 0.47,
+        4: 0.45,
+        5: 0.44,
+        6: 0.42,
+        7: 0.41,
+        8: 0.41,
+        9: 0.41,
         10: 0.4,
         11: 0.4,
         12: 0.38,
@@ -293,8 +293,8 @@ function clickCoin(cntRatioItem, pressedCard) {
     ratioItemArr[cntRatioItem].classList.add('ratio__active');
     moveRatioItem(cntRatioItem)
     createRationsandCounts(pressedCard)
-    number = betInput.value * ratioItemArr[cntRatioItem].textContent
-    betBtn.innerHTML = `Заберите награду ${(Math.round(number * 100)/100).toFixed(2)}`
+    number = Math.floor(betInput.value * ratioItemArr[cntRatioItem].textContent)
+    betBtn.innerHTML = `Заберите награду ${(Math.floor(number * 100)/100)}`
 }
 
 // если выпала бомба
