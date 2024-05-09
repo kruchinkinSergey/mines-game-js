@@ -293,8 +293,8 @@ function clickCoin(cntRatioItem, pressedCard) {
     ratioItemArr[cntRatioItem].classList.add('ratio__active');
     moveRatioItem(cntRatioItem)
     createRationsandCounts(pressedCard)
-    number = Math.floor(betInput.value * ratioItemArr[cntRatioItem].textContent)
-    betBtn.innerHTML = `Заберите награду ${(Math.floor(number * 100)/100)}`
+    number = Math.ceil(betInput.value * ratioItemArr[cntRatioItem].textContent)
+    betBtn.innerHTML = `Заберите награду ${(number * 100)/100}`
 }
 
 // если выпала бомба
