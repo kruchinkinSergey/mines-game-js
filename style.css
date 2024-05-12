@@ -279,7 +279,7 @@ body{
     -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
-    width: 26vw;
+    width: 300px;
     text-align: center;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -625,7 +625,6 @@ body{
         padding: 47px 0 54px 54px;
     }
     .overlay__content {
-        width: 29vw;
         gap: 19px;
         padding: 70px 0;
     }
