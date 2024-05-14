@@ -190,7 +190,6 @@ function flipCard(e){
     let clickedCard = e.target;
 
     if(clickedCard !== lastCard && disableDeck === false) {
-        playAudio('./audio/click.mp3')
         pressedCard++
         cntRatioItemActive++
         clickedCard.classList.add("flip");
@@ -293,6 +292,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
 
 // если выпала монетка 
 function clickCoin(cntRatioItem, pressedCard) {
+    playAudio('./audio/clickCoin.mp3')
     isGetReward = true
     const ratioItemArr = document.querySelectorAll('.ratio__item');
     ratioItemArr[cntRatioItem].classList.add('ratio__active');
@@ -304,6 +304,7 @@ function clickCoin(cntRatioItem, pressedCard) {
 
 // если выпала бомба
 function clickBomb() {
+    playAudio('./audio/clickBomb.mp3')
     const ratioItemArr = document.querySelectorAll('.ratio__item');
     for (let i = 0; i < cntRatioItemActive; i++) {
         ratioItemArr[i].classList.remove('ratio__active');
