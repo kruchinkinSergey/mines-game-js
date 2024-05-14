@@ -21,6 +21,10 @@ let cntRatioItemActive = -1;
 let isGetReward = false
 bombCalcNum.innerHTML = 3
 
+function playAudio(url) {
+    new Audio(url).play();
+}
+
 // вызываем функцию для ячеек с коэффициентами
 createRationsandCounts(22)
 
@@ -186,6 +190,7 @@ function flipCard(e){
     let clickedCard = e.target;
 
     if(clickedCard !== lastCard && disableDeck === false) {
+        playAudio('./audio/click.mp3')
         pressedCard++
         cntRatioItemActive++
         clickedCard.classList.add("flip");
