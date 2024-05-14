@@ -292,7 +292,9 @@ Math.easeInOutQuad = function(t, b, c, d) {
 
 // если выпала монетка 
 function clickCoin(cntRatioItem, pressedCard) {
-    playAudio('./audio/clickCoin.mp3')
+    setTimeout(() => {
+        playAudio('./audio/clickCoin.mp3')
+    }, 100)
     isGetReward = true
     const ratioItemArr = document.querySelectorAll('.ratio__item');
     ratioItemArr[cntRatioItem].classList.add('ratio__active');
@@ -304,7 +306,9 @@ function clickCoin(cntRatioItem, pressedCard) {
 
 // если выпала бомба
 function clickBomb() {
-    playAudio('./audio/clickBomb.mp3')
+    setTimeout(() => {
+        playAudio('./audio/clickBomb.mp3')
+    }, 100)
     const ratioItemArr = document.querySelectorAll('.ratio__item');
     for (let i = 0; i < cntRatioItemActive; i++) {
         ratioItemArr[i].classList.remove('ratio__active');
