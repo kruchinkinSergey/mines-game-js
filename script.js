@@ -21,8 +21,19 @@ let cntRatioItemActive = -1;
 let isGetReward = false
 bombCalcNum.innerHTML = 3
 
-function playAudio(url) {
-    new Audio(url).play();
+const audioCoin = new Audio()
+audioCoin.src = './audio/clickCoin.mp3';
+audioCoin.preload = 'auto';
+const audioBomb = new Audio()
+audioBomb.src = './audio/clickBomb.mp3';
+audioBomb.preload = 'auto';
+
+function playAudioCoin() {
+    audioCoin.play();
+}
+
+function playAudioBomb() {
+    audioBomb.play();
 }
 
 // вызываем функцию для ячеек с коэффициентами
@@ -292,9 +303,7 @@ Math.easeInOutQuad = function(t, b, c, d) {
 
 // если выпала монетка 
 function clickCoin(cntRatioItem, pressedCard) {
-    setTimeout(() => {
-        playAudio('./audio/clickCoin.mp3')
-    }, 100)
+    playAudioCoin()
     isGetReward = true
     const ratioItemArr = document.querySelectorAll('.ratio__item');
     ratioItemArr[cntRatioItem].classList.add('ratio__active');
@@ -306,9 +315,7 @@ function clickCoin(cntRatioItem, pressedCard) {
 
 // если выпала бомба
 function clickBomb() {
-    setTimeout(() => {
-        playAudio('./audio/clickBomb.mp3')
-    }, 100)
+    playAudioBomb()
     const ratioItemArr = document.querySelectorAll('.ratio__item');
     for (let i = 0; i < cntRatioItemActive; i++) {
         ratioItemArr[i].classList.remove('ratio__active');
